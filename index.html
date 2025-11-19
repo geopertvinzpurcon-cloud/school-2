@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Simple Memory Game with Timer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Memory Game 🧠</h1>
+      <div class="controls">
+        <div class="timer" id="timer">Time: 60s</div>
+        <button id="restartBtn">Restart</button>
+      </div>
+    </header>
+
+    <!-- game board where cards will appear -->
+    <div class="board" id="board"></div>
+
+    <div class="message" id="message">
+      Flip two cards to find matching pairs. Match all before time runs out!
+    </div>
+  </div>
+
+  <!-- Link to external JS file -->
+  <script src="script.js"></script>
+</body>
+</html>
