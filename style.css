@@ -1,134 +1,81 @@
-:root {
-  --bg:#f6f8fb;
-  --card:#ffffff;
-  --accent:#4f46e5;
-  --text:#0f172a;
-}
-
+/* Pine Green Background */
 body {
-  margin:0;
-  font-family: system-ui,Segoe UI,Roboto,Arial;
-  background:var(--bg);
-  color:var(--text);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:100vh;
-  padding:20px;
-  box-sizing:border-box;
+    font-family: Arial, sans-serif;
+    background-color: #00351c;
+    text-align: center;
+    margin: 0;
+    padding: 40px 10px;
 }
 
+/* White Form Container */
 .container {
-  width:100%;
-  max-width:700px;
-  background:linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
-  border-radius:12px;
-  box-shadow: 0 8px 30px rgba(12, 20, 45, 0.08);
-  padding:20px;
+    width: 90%;
+    max-width: 450px;
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 12px;
+    margin: auto;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 }
 
-header {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:12px;
-  gap:12px;
+/* Logo */
+.logo {
+    width: 120px;
+    margin-bottom: 10px;
 }
 
-h1 {
-  margin:0;
-  font-size:18px;
+input, select {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    font-size: 15px;
 }
 
-.controls {
-  display:flex;
-  gap:10px;
-  align-items:center;
+.label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: left;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.timer {
-  font-weight:700;
-  background:var(--card);
-  padding:8px 12px;
-  border-radius:8px;
-  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.03);
+/* Animated Other Gender Box */
+#otherGenderContainer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
+}
+
+#otherGenderContainer.show {
+    max-height: 100px;
+}
+
+/* Buttons */
+.button-row {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 button {
-  background:var(--accent);
-  color:white;
-  border:none;
-  padding:8px 12px;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:600;
+    width: 45%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-button:active {
-  transform: translateY(1px);
+button[type="submit"] {
+    background: #28a745;
+    color: white;
 }
 
-/* Game board grid */
-.board {
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap:10px;
-  margin-top:14px;
-}
-
-.card {
-  position:relative;
-  width:100%;
-  aspect-ratio: 1 / 1;
-  perspective: 800px;
-  cursor:pointer;
-}
-
-.card .inner {
-  position:absolute;
-  inset:0;
-  transition: transform 350ms;
-  transform-style: preserve-3d;
-  border-radius:10px;
-}
-
-.card.flipped .inner {
-  transform: rotateY(180deg);
-}
-
-.face {
-  position:absolute;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  backface-visibility: hidden;
-  border-radius:10px;
-  font-size:30px;
-  user-select:none;
-}
-
-.front {
-  background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
-  color: white;
-}
-
-.back {
-  transform: rotateY(180deg);
-  background: var(--card);
-  box-shadow: 0 6px 16px rgba(12,20,45,0.06);
-  font-size:28px;
-}
-
-.message {
-  margin-top:12px;
-  padding:12px;
-  background: #f1f5f9;
-  border-radius:8px;
-}
-
-@media (max-width:480px) {
-  .board {
-    grid-template-columns: repeat(3, 1fr);
-  }
+button[type="reset"] {
+    background: #dc3545;
+    color: white;
 }
